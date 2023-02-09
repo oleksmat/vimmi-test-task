@@ -1,22 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import UserListPage from '@/views/UserListPage.vue';
-import UserDetailsPage from '@/views/UserDetailsPage.vue';
+import UserListRoute from '@/modules/user-list/UserListRoute';
+import UserDetailsRoute from '@/modules/user-details/UserDetailsRoute';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'user-list',
-      component: UserListPage
-    },
-    {
-      path: '/user/:userId',
-      name: 'user-details',
-      props: true,
-      component: UserDetailsPage
-    }
-  ]
-})
+    ...UserListRoute,
+    ...UserDetailsRoute,
+  ],
+});
 
-export default router
+export default router;

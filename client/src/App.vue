@@ -1,14 +1,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { RouterView } from 'vue-router'
+import { RouterView } from 'vue-router';
 
 export default defineComponent({
   methods: {
     openList() {
-      this.$router.push({ name: "user-list" });
-    }
+      this.$router.push({ name: 'user-list' });
+    },
   },
-  components: { RouterView }
+  components: { RouterView },
 });
 </script>
 
